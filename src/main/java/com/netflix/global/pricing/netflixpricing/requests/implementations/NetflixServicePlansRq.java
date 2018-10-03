@@ -6,6 +6,7 @@ import com.netflix.global.pricing.netflixpricing.model.implementations.ServicePl
 import lombok.*;
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.Null;
 import java.util.List;
 
 /**
@@ -26,6 +27,6 @@ public class NetflixServicePlansRq {
     @NonNull
     private String countryName;
 
-    @NonNull
+    @Null
     private List<ServicePlanDefinition> servicePlanDefinitions;
 }

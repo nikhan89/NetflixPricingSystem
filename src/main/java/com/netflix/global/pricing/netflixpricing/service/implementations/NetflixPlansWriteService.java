@@ -46,10 +46,10 @@ public class NetflixPlansWriteService implements INetflixPlanWriteService{
                     ("Country already exists");
         }
 
-        NetflixServicePlans servicePlanDefinition = mapper.transformNetflixServicePlansRq(netflixServicePlansRq);
+        netflixServicePlans = mapper.transformNetflixServicePlansRq(netflixServicePlansRq);
 
-        servicePlanDefinition.setCountryId(generateCountryId(countryCode));
-        netflixServicePlanRepository.save(servicePlanDefinition);
+        netflixServicePlans.setCountryId(generateCountryId(countryCode));
+        netflixServicePlanRepository.save(netflixServicePlans);
 
     }
 
@@ -71,6 +71,7 @@ public class NetflixPlansWriteService implements INetflixPlanWriteService{
                 netflixServicePlans.getServicePlanDefinitions().size();
 
         String planId = Utils.generateServicePlanId(countryCode,servicePlanDefinitionSize);
+
         servicePlanDefinition.setPlanId(planId);
         List<ServicePlanDefinition> servicePlanDefinitions =  new ArrayList<ServicePlanDefinition>() ;
         if(netflixServicePlans.getServicePlanDefinitions() != null)

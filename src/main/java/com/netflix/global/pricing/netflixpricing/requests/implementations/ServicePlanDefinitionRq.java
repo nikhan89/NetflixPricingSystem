@@ -3,6 +3,8 @@ package com.netflix.global.pricing.netflixpricing.requests.implementations;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
+import javax.validation.constraints.Null;
+
 /**
  * Created by nimra on 03/10/18.
  */
@@ -10,11 +12,13 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Getter
-@Builder
 @Setter
+@Builder
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ServicePlanDefinitionRq {
+    @Null
+    String planId;
     String name;
     String status;
     Float baseOfferPriceComponent;
