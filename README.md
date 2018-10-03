@@ -1,8 +1,8 @@
 NetflixPricingSystem
 
-brew install mongodb
-local db is created by default post installation
-#start mongodb
-mongod
-connect to mongodb
-mongo
+brew install mongodb.<br/>
+local db is created by default post installation<br/>
+#To start mongodb<br/>
+mongod<br/>
+#To connect to mongodb<br/>
+mongo<br/>
